@@ -28,6 +28,13 @@ namespace HRMANAGEMENTAPI.Repository
 
         public async Task CheckInAsync(int employeeId)
         {
+
+            //Check if employee exists
+            var employeeExists = await _context.Employees
+            .AnyAsync(e => e.id == employeeId);
+
+            if (!employeeExists)
+                throw new InvalidOperationException("Employee does not exist");
             var today = DateTime.Now;
             var attendance = await GetAttendanceByDateAsync(employeeId,today);
 

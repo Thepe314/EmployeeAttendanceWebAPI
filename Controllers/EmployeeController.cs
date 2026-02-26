@@ -51,7 +51,7 @@ namespace HRMANAGEMENTAPI.Controller
             };
 
             await _empRepo.CreateEmployee(employee);
-            return Ok("Post Successfully created");
+            return Ok("Employee Successfully created");
 
         
         }
@@ -69,20 +69,20 @@ namespace HRMANAGEMENTAPI.Controller
             existing.Department = dto.Department;
 
             await _empRepo.UpdateEmployee(existing);
-            return Ok("Post Updated Successfully");
+            return Ok("Employee Updated Successfully");
 
         
         }
 
         //Delete employee
-        [HttpPost("{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult>DeleteEmployee(int id)
         {
             var existing = await _empRepo.GetbyId(id);
             if(existing ==null!) return NotFound("Missing id");
 
             await _empRepo.DeleteEmployee(id);
-            return Ok("Post Successfully Deleted");
+            return Ok("Employee Successfully Deleted");
 
         
         }
