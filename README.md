@@ -4,7 +4,9 @@ A Employee System built with .Net and SQL Server (SSMS)
 
 ## What it does
 -Manages Employees (CREATE, READ, UPDATE, DELETE)
+
 -Check in and out
+
 -Check if attendance has been done
 ## Technologies Used
 - .Net 10
@@ -45,6 +47,7 @@ https://github.com/Thepe314/EmployeeAttendanceWebAPI.git
 -PUT /apiEmployee/ {id} ->Change values of employee with id
 
 -DELETE /apiEmployees/{id} ->Delete an existing employee
+
 
 
 
